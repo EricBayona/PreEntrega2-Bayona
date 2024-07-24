@@ -34,5 +34,12 @@ while (eleccion != "7") {
     }
     eleccion = prompt("1-Azucar, 2-Fideo, 3-Arroz, 4-Aceite, 5-Leche, 6-Ver Precios 7-Terminar");
 }
-alert("Compra realizada $ " +((precioAzucar * cantidadAzucar) + (precioFideo * cantidadFideo) + (precioArroz * cantidadArroz) + (precioAceite * cantidadAceite) +(precioLeche * cantidadLeche)))
+const compraRealizada = ((precioAzucar * cantidadAzucar) + (precioFideo * cantidadFideo) + (precioArroz * cantidadArroz) + (precioAceite * cantidadAceite) +(precioLeche * cantidadLeche))
+alert("Compra realizada $ " + compraRealizada)
 
+const descuentoEfectivo = descuento => descuento * 0.10;
+function precioConDescuento(compraRealizada){
+    const precioPromocional = compraRealizada - descuentoEfectivo(compraRealizada);
+    alert("Si paga en efectivo obtiene un descuento del 10%, su compra tendra un valor de : "+precioPromocional )
+}
+precioConDescuento(compraRealizada)
